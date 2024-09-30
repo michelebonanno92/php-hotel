@@ -43,30 +43,30 @@
     
         ?>
            
-
-?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>PHP HOTEL</title>
-        <!-- link css -->
-         <link rel="stylesheet" href="css/style.css">
+      
     </head>
     <body>
             <?php
                     //  for ( $i = 0 ; $i < count($hotels); $i++) {
-                    foreach ( $hotels as $hotel){
+                    foreach ( $hotels as $ind => $hotel) {
                         ?>
-                            <br>
                             <ul>
                                     <li>
-                                        Name: <?php echo $hotel["name"] ?>
+                                        Index: <?php echo $ind ; ?> 
                                     </li>
                                     <br>
                                     <li>
-                                        Description: <?php echo $hotel["description"] ?>
+                                        Name: <?php echo $hotel["name"]; ?>
+                                    </li>
+                                    <br>
+                                    <li>
+                                        Description: <?php echo $hotel["description"]; ?>
                                     </li>
                                     <br>
                                     <li>
@@ -88,11 +88,11 @@
                                 
                                     <br>
                                     <li>
-                                        Vote: <?php echo $hotel["vote"] ?>
+                                        Vote: <?php echo $hotel["vote"]; ?>
                                     </li>
                                     <br>
                                     <li>
-                                        Distance_to_center: <?php echo $hotel["distance_to_center"] ?>
+                                        Distance_to_center: <?php echo $hotel["distance_to_center"]; ?>
                                     </li>
                             </ul>
                             <br>

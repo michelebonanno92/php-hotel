@@ -49,58 +49,42 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>PHP HOTEL</title>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
       
     </head>
     <body>
-            <?php
-                    //  for ( $i = 0 ; $i < count($hotels); $i++) {
-                    foreach ( $hotels as $ind => $hotel) {
-                        ?>
-                            <ul>
-                                    <li>
-                                        Index: <?php echo $ind ; ?> 
-                                    </li>
-                                    <br>
-                                    <li>
-                                        Name: <?php echo $hotel["name"]; ?>
-                                    </li>
-                                    <br>
-                                    <li>
-                                        Description: <?php echo $hotel["description"]; ?>
-                                    </li>
-                                    <br>
-                                    <li>
-                                        Parking:  <?php echo ($hotel["parking"] == true ?  'Si' : 'No'); ?>  
-                                    </li>
-                                    <!--  
-                                    <li>
-                                        Parking: 
-                                        <?php 
-                                            if ( $hotel["parking"] == true) {
-                                                echo 'Si';
-                                            }
-                                            else{
-                                                echo 'No';
-                                            }
-                                        ?>
-                                        -->
-                                    </li>
-                                
-                                    <br>
-                                    <li>
-                                        Vote: <?php echo $hotel["vote"]; ?>
-                                    </li>
-                                    <br>
-                                    <li>
-                                        Distance_to_center: <?php echo $hotel["distance_to_center"]; ?>
-                                    </li>
-                            </ul>
-                            <br>
-                            <hr>
-                        <?php
+            <table class="table">
+                <thead>
+                    <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Descrizione</th>
+                    <th scope="col">Parcheggio</th>
+                    <th scope="col">Voto</th>
+                    <th scope="col">Distanza dal centro</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                        //  for ( $i = 0 ; $i < count($hotels); $i++) {
+                        foreach ( $hotels as $ind => $hotel) {
+                            ?>
+                                <tr>
+                                    <th scope="row"><?php echo $ind ; ?> </th>
+                                    <td><?php echo $hotel["name"]; ?></td>
+                                    <td><?php echo $hotel["description"]; ?></td>
+                                    <td><?php echo ($hotel["parking"] == true ?  'Si' : 'No'); ?> </td>
+                                    <td><?php echo $hotel["vote"]; ?></td>
+                                    <td><?php echo $hotel["distance_to_center"]; ?></td>
+                                </tr>
+                                <?php
                    
-                     }
-                ?>
+                            }
+                         ?>
+                </tbody>
+            </table>
+
+            
         
     </body>
 </html>

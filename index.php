@@ -40,36 +40,9 @@
 
     ];
 
-    for ( $i = 0 ; $i < count($hotels); $i++){
+    
         ?>
-            <ul>
-                    <li>
-                        Name: <?php echo $hotels[$i]["name"] ?>
-                    </li>
-                    <li>
-                        Description: <?php echo $hotels[$i]["description"] ?>
-                    </li>
-                    <li>
-                        Parking: 
-                        <?php 
-                            if ( $hotels[$i]["parking"] == true) {
-                                echo 'Si';
-                            }
-                            else{
-                                echo 'No';
-                            }
-                        ?>
-                    </li>
-                    <li>
-                        Vote: <?php echo $hotels[$i]["vote"] ?>
-                    </li>
-                    <li>
-                        Distance_to_center: <?php echo $hotels[$i]["distance_to_center"] ?>
-                    </li>
-            </ul>
-            <hr>
-       <?php
-    }
+           
 
 ?>
 <!DOCTYPE html>
@@ -82,11 +55,52 @@
          <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-        <main>
-            <div>
-             
-            </div>
-        </main>
+            <?php
+                    //  for ( $i = 0 ; $i < count($hotels); $i++) {
+                    foreach ( $hotels as $hotel){
+                        ?>
+                            <br>
+                            <ul>
+                                    <li>
+                                        Name: <?php echo $hotel["name"] ?>
+                                    </li>
+                                    <br>
+                                    <li>
+                                        Description: <?php echo $hotel["description"] ?>
+                                    </li>
+                                    <br>
+                                    <li>
+                                        Parking:  <?php echo ($hotel["parking"] == true ?  'Si' : 'No'); ?>  
+                                    </li>
+                                    <!--  
+                                    <li>
+                                        Parking: 
+                                        <?php 
+                                            if ( $hotel["parking"] == true) {
+                                                echo 'Si';
+                                            }
+                                            else{
+                                                echo 'No';
+                                            }
+                                        ?>
+                                        -->
+                                    </li>
+                                
+                                    <br>
+                                    <li>
+                                        Vote: <?php echo $hotel["vote"] ?>
+                                    </li>
+                                    <br>
+                                    <li>
+                                        Distance_to_center: <?php echo $hotel["distance_to_center"] ?>
+                                    </li>
+                            </ul>
+                            <br>
+                            <hr>
+                        <?php
+                   
+                     }
+                ?>
         
     </body>
 </html>

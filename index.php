@@ -103,7 +103,7 @@
                             <?php
                                 //  for ( $i = 0 ; $i < count($hotels); $i++) {
                                 foreach ( $hotels as $ind => $hotel) {
-                                    $showHotel = false;
+                                    $showHotel = true;
 
                                     // isset($var) controlla se la variabile passata come argomento esiste ( quindi è stata definita) e ha un valore diverso da null . Restituisce true/false
 
@@ -114,18 +114,23 @@
                                              && 
                                              $hotel["parking"] == false // controllo se l'hotel NON ha il parcheggio 
                                         ) {
-                                            $showHotel = true;
+                                            $showHotel = false;
                                         }
-                                    ?>
-                                        <tr>
-                                            <th scope="row"><?php echo $ind + 1; ?> </th>
-                                            <td><?php echo $hotel["name"]; ?></td>
-                                            <td><?php echo $hotel["description"]; ?></td>
-                                            <td><?php echo ($hotel["parking"] == true ?  'Si' : 'No'); ?> </td>
-                                            <td><?php echo $hotel["vote"]; ?></td>
-                                            <td><?php echo $hotel["distance_to_center"]; ?></td>
-                                        </tr>
-                                        <?php
+
+
+                                        if ($showHotel){
+                                            ?>
+                                            <tr>
+                                                <th scope="row"><?php echo $ind + 1; ?> </th>
+                                                <td><?php echo $hotel["name"]; ?></td>
+                                                <td><?php echo $hotel["description"]; ?></td>
+                                                <td><?php echo ($hotel["parking"] == true ?  'Si' : 'No'); ?> </td>
+                                                <td><?php echo $hotel["vote"]; ?></td>
+                                                <td><?php echo $hotel["distance_to_center"]; ?></td>
+                                            </tr>
+                                            <?php
+                                        }
+                                   
                         
                                     }
                                 ?>

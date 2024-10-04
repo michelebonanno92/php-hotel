@@ -98,8 +98,9 @@
                         min="1"
                         max="5"
                         name="vote"
-                        value="<?php echo (isset($_GET['vote']) ? $_GET['vote'] : ''); ?> " >
-                   
+                        placeholder="<?php echo (isset($_GET['vote']) ? $_GET['vote'] : ''); ?>"
+                         >
+                           <!-- value="<?php echo (isset($_GET['vote']) ? $_GET['vote'] : ''); ?> " /*  -->
                         
                 </div>
 
